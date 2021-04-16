@@ -10,13 +10,9 @@ WORKDIR /app
 
 RUN mkdir /db_folder
 
-RUN ls -ltr /db_folder
-
 RUN pip install -r requirements.txt
 
 COPY . /app
-
-#RUN python db.py
 
 EXPOSE 5000
 
