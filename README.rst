@@ -4,8 +4,6 @@ Notejam: Flask
 
 Notejam application implemented using `Flask <http://flask.pocoo.org/>`_ microframework.
 
-Flask version: 1.1.1
-
 Flask extension used:
 
 * Flask-Login
@@ -26,7 +24,7 @@ Clone the repo:
 
 .. code-block:: bash
 
-    $ git clone git@github.com:nordcloud/notejam.git YOUR_PROJECT_DIR/
+    $ git clone git@github.com:d2k-klin/sample-flask-app.git YOUR_PROJECT_DIR/
 
 -------
 Install
@@ -61,6 +59,15 @@ Start flask web server:
 
 Go to http://127.0.0.1:5000/ in your browser
 
+Start flask web server (docker container):
+
+.. code-block:: bash
+
+    $ docker build -t notejam-dev .
+    $ docker run -d -p 5000:5000 notejam-dev
+
+Go to http://127.0.0.1:5000/ in your browser
+
 ---------
 Run tests
 ---------
@@ -72,18 +79,20 @@ Run functional and unit tests:
     $ cd YOUR_PROJECT_DIR/flask/
     $ python tests.py
 
+------
+Build and push docker image
+------
 
-============
-Contribution
-============
-
-Do you have python/flask experience? Help the app to follow python and flask best practices.
-
-Please send your pull requests in the ``master`` branch.
-Always prepend your commits with framework name:
+To build and push docker image to AWS ECR run the follwing command:
 
 .. code-block:: bash
 
-    Flask: Implemented sign in functionality
+    $ ./ecr_deploy_advanced.sh eu-central-1 notejam-dev
 
-Read `contribution guide <https://github.com/komarserjio/notejam/blob/master/contribute.rst>`_ for details.
+
+============
+##DISCLAIMER
+============
+The application is cloned and containerized
+Reference source code : https://github.com/komarserjio/notejam/tree/master/flask
+ 
