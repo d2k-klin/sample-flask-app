@@ -93,6 +93,6 @@ To build and push docker image to AWS ECR run the follwing command:
 ============
 DISCLAIMER
 ============
-The application is cloned and containerized
+The application is cloned and containerized;
 reference source code : https://github.com/komarserjio/notejam/tree/master/flask
  
